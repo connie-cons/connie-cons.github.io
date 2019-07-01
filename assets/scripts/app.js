@@ -102,7 +102,7 @@ $(document).ready(function() {
 		typeSpeed: 1,
 		contentType: 'text',
 		callback: function() {
-			$("#writing-text").css({"color": "#fff", "background-color": "#C8412B"});
+			$("#writing-text").css({"color": "#fff", "background-color": "grey"});
 		},
 		preStringTyped: function() {},
 		onStringTyped: function() {}

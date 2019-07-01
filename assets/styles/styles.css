@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 /*** thin bar ***/
 
 .thin-bar {
-		border-bottom: 5px solid #F33F12;
+		border-bottom: 5px solid rgb(18, 243, 187);
 }
 
 
@@ -111,16 +111,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta .cta-button {
-		color: #cc4b37;
+		color: #2d5399e8;
 		text-transform: uppercase;
-		border: 2px solid rgba(255, 103, 68, 0.91);
+		border: 2px solid #2d5399e8;
 		border-radius: 50px;
 		background: white;
 }
 
 .cta .cta-button:hover, .cta .cta-button:focus {
 		box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 14px 1px rgba(0, 0, 0, 0.15);
-		background-color: rgba(255, 103, 68, 0.91);
+		background-color: #f2f554e8;
 		color: white;
 }
 
@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /*** Experience ***/
 #experience {
-	background-color: #4c6d86;
+	background-color: #3291a1;
 	padding: 6em 4em 5.6em;
 }
 
