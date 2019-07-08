@@ -94,7 +94,7 @@ function designForm() {
 $(document).ready(function() {
 	Typed.new("#writing-text", {
 		strings: [
-			"Pizza", "More Pizza", "MOST PIZZA"
+			"Pizza", "PIZZA MAKES ANYTHING POSSIBLE."
 		],
 		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
 		stringsElement: null,

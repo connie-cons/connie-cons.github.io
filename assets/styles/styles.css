@@ -115,13 +115,13 @@ h1, h2, h3, h4, h5, h6 {
 		text-transform: uppercase;
 		border: 2px solid #2d5399e8;
 		border-radius: 50px;
-		background: white;
+		background: rgb(251, 251, 251);
 }
 
 .cta .cta-button:hover, .cta .cta-button:focus {
 		box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 14px 1px rgba(0, 0, 0, 0.15);
-		background-color: #f2f554e8;
-		color: white;
+		background-color: #ffffffe8;
+		color: rgb(17, 2, 2);
 }
 
 #about i {
