@@ -1,3 +1,17 @@
+const STAGE_WIDTH = 1600;
+const STAGE_HEIGHT = 900;
+
+function fitStage() {
+	const desktop = document.querySelector('.desktop');
+	const stage = document.getElementById('stage');
+	if (!desktop || !stage) return;
+	const scale = Math.min(desktop.clientWidth / STAGE_WIDTH, desktop.clientHeight / STAGE_HEIGHT);
+	stage.style.transform = `translate(-50%, -50%) scale(${scale})`;
+}
+
+window.addEventListener('resize', fitStage);
+window.addEventListener('DOMContentLoaded', fitStage);
+
 document.addEventListener('DOMContentLoaded', () => {
 	const output = document.getElementById('console-output');
 	const cursor = document.getElementById('console-cursor');

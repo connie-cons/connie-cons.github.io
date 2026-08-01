@@ -34,43 +34,45 @@
 	</div>
 
 	<div class="desktop">
+		<div class="stage" id="stage">
 
-		<div class="window window--console">
-			<div class="window__titlebar">
-				<span class="window__box window__box--close"></span>
-				<span class="window__title">Central Park Control Console</span>
-				<span class="window__box window__box--zoom"></span>
-			</div>
-			<div class="console__body">
-				<pre class="console__output" id="console-output"></pre><span class="console__cursor" id="console-cursor">&#9608;</span>
-			</div>
-		</div>
-
-		<div class="window window--king" id="king-window">
-			<div class="window__titlebar">
-				<span class="window__box window__box--close" id="king-close"></span>
-				<span class="window__title">The King</span>
-				<span class="window__box window__box--zoom"></span>
-			</div>
-			<div class="window__body">
-				<div class="window__content">
-					<img src="assets/images/dennis-nedry-jurassic-park.gif" alt="The King">
+			<div class="window window--console">
+				<div class="window__titlebar">
+					<span class="window__box window__box--close"></span>
+					<span class="window__title">Central Park Control Console</span>
+					<span class="window__box window__box--zoom"></span>
 				</div>
-				<div class="window__scrollbar">
-					<span class="window__scroll-arrow window__scroll-arrow--up">&#9650;</span>
-					<div class="window__scroll-track">
-						<div class="window__scroll-thumb"></div>
+				<div class="console__body">
+					<pre class="console__output" id="console-output"></pre><span class="console__cursor" id="console-cursor">&#9608;</span>
+				</div>
+			</div>
+
+			<div class="window window--king" id="king-window">
+				<div class="window__titlebar">
+					<span class="window__box window__box--close" id="king-close"></span>
+					<span class="window__title">The King</span>
+					<span class="window__box window__box--zoom"></span>
+				</div>
+				<div class="window__body">
+					<div class="window__content">
+						<img src="assets/images/dennis-nedry-jurassic-park.gif" alt="The King">
 					</div>
-					<span class="window__scroll-arrow window__scroll-arrow--down">&#9660;</span>
+					<div class="window__scrollbar">
+						<span class="window__scroll-arrow window__scroll-arrow--up">&#9650;</span>
+						<div class="window__scroll-track">
+							<div class="window__scroll-thumb"></div>
+						</div>
+						<span class="window__scroll-arrow window__scroll-arrow--down">&#9660;</span>
+					</div>
+					<div class="window__growbox"></div>
 				</div>
-				<div class="window__growbox"></div>
 			</div>
+
+			<audio id="king-audio" loop>
+				<!-- Add your clip: <source src="assets/audio/magic-word.mp3" type="audio/mpeg"> -->
+			</audio>
+
 		</div>
-
-		<audio id="king-audio" loop>
-			<!-- Add your clip: <source src="assets/audio/magic-word.mp3" type="audio/mpeg"> -->
-		</audio>
-
 	</div>
 
 	<script src="assets/scripts/app.js"></script>
