@@ -43,9 +43,9 @@ body {
 
 .window--console {
 	position: absolute;
-	top: 18%;
-	left: 50%;
-	transform: translate(-50%,50%);
+	top: 8%;
+	left: 30%;
+	transform: translate(-50%,10%);
 	width: min(100vw);
 	z-index: 5;
 }
@@ -53,9 +53,9 @@ body {
 .window--king {
 	position: absolute;
 	top: 62%;
-	left: 66%;
+	left: 80%;
 	width:30vw;
-	transform: translate(-50%, -50%) scale(0.9);
+	transform: translate(-100%, -70%) scale(0.9);
 	z-index: 20;
 	opacity: 0;
 	pointer-events: none;
@@ -63,8 +63,9 @@ body {
 }
 
 .window--king.is-visible {
+	left: 80%;
 	opacity: 1;
-	transform: translate(-50%, -50%) scale(1);
+	transform: translate(-100%, -70%) scale(1);
 	pointer-events: auto;
 	width:30vw;
 }
