@@ -1,112 +1,66 @@
-function makeWords() {
+document.addEventListener('DOMContentLoaded', () => {
+	const output = document.getElementById('console-output');
+	const cursor = document.getElementById('console-cursor');
+	const kingWindow = document.getElementById('king-window');
+	const kingClose = document.getElementById('king-close');
+	const audio = document.getElementById('king-audio');
 
-	var words = [
-		{
-			text: "html5",
-			weight: 12.3
-		}, {
-			text: "css3",
-			weight: 12.5
-		}, {
-			text: "javascript",
-			weight: 13
-		}, {
-			text: "jquery",
-			weight: 12
-		}, {
-			text: "programming",
-			weight: 10
-		}, {
-			text: "python",
-			weight: 10
-		}, {
-			text: "java",
-			weight: 9
-		}, {
-			text: "nodejs",
-			weight: 11
-		}, {
-			text: "npm",
-			weight: 9
-		}, {
-			text: "web development",
-			weight: 10
-		}, {
-			text: "C",
-			weight: 8.3
-		}, {
-			text: "Scheme",
-			weight: 8.1
-		}, {
-			text: "php",
-			weight: 7.8
-		}, {
-			text: "hadoop",
-			weight: 8.5
-		}, {
-			text: "numpy",
-			weight: 7
-		}, {
-			text: "matplotlib",
-			weight: 7
-		}, {
-			text: "ruby",
-			weight: 8
-		}, {
-			text: "express",
-			weight: 9
-		}, {
-			text: "flask",
-			weight: 8.9
-		}, {
-			text: "responsive design",
-			weight: 10
-		}, {
-			text: "bootstrap",
-			weight: 10
-		}
-		/* ... */
+	const lines = [
+		'Jurassic Park System Security Interface',
+		'Version 4.0.5, Alpha E',
+		'Ready...',
+		'',
+		'> access security',
+		'access: PERMISSION DENIED.',
+		'> access security grid',
+		'access: PERMISSION DENIED.',
+		'> access main security grid',
+		'access: PERMISSION DENIED....',
+		...Array(6).fill("YOU DIDN'T SAY THE MAGIC WORD!")
 	];
-	return words;
-}
 
-function makeWordCloud(words) {
-	$('.teaching-domains').jQCloud(words, {delay: 120});
-}
+	let started = false;
 
-function displayWordCloud() {
-	var count = 1;
-	$(window).on('scroll', function() {
-		var y_scroll_pos = window.pageYOffset;
-		var scroll_pos_test = 2700; // set to whatever you want it to be
-		var words = makeWords();
-		if (y_scroll_pos > scroll_pos_test && count <= 1) {
-			makeWordCloud(words);
-			count++;
+	function typeLine(lineIndex, charIndex, onDone) {
+		if (lineIndex >= lines.length) {
+			onDone();
+			return;
 		}
+		const line = lines[lineIndex];
+		const prefix = lines.slice(0, lineIndex).join('\n') + (lineIndex > 0 ? '\n' : '');
+		if (charIndex <= line.length) {
+			output.textContent = prefix + line.slice(0, charIndex);
+			setTimeout(() => typeLine(lineIndex, charIndex + 1, onDone), 22);
+		} else {
+			setTimeout(() => typeLine(lineIndex + 1, 0, onDone), 260);
+		}
+	}
+
+	function triggerLockdown() {
+		kingWindow.classList.add('is-visible');
+		if (audio) {
+			audio.play().catch(() => {});
+		}
+	}
+
+	function startSequence() {
+		if (started) return;
+		started = true;
+		cursor.style.display = 'none';
+		typeLine(0, 0, triggerLockdown);
+	}
+
+	document.addEventListener('keydown', (event) => {
+		if (event.key === 'Enter') startSequence();
 	});
-}
 
-function designForm() {
-	$("#my-modal form").addClass("my-form");
-}
+	document.addEventListener('click', startSequence, { once: true });
 
-$(document).ready(function() {
-	Typed.new("#writing-text", {
-		strings: [
-			"Pizza", "PIZZA MAKES ANYTHING POSSIBLE."
-		],
-		// Optionally use an HTML element to grab strings from (must wrap each string in a <p>)
-		stringsElement: null,
-		// typing speed
-		typeSpeed: 1,
-		contentType: 'text',
-		callback: function() {
-			$("#writing-text").css({"color": "#fff", "background-color": "grey"});
-		},
-		preStringTyped: function() {},
-		onStringTyped: function() {}
-	});
-
-	displayWordCloud();
-})
+	if (kingClose) {
+		kingClose.addEventListener('click', () => {
+			kingWindow.classList.remove('is-shaking');
+			void kingWindow.offsetWidth;
+			kingWindow.classList.add('is-shaking');
+		});
+	}
+});
